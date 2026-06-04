@@ -1,0 +1,92 @@
+{
+  "theme_and_archetype": {
+    "theme": "light",
+    "archetype": "4 (Swiss & High-Contrast)",
+    "rationale": "As a utility tool for scanning and verification, this app requires extreme precision, clarity, and authority. The Swiss High-Contrast archetype ensures maximum readability for OCR output fields and minimizes visual distraction."
+  },
+  "typography": {
+    "primary_font": "Cabinet Grotesk",
+    "body_font": "IBM Plex Sans",
+    "rules": {
+      "headings": "Use Cabinet Grotesk, font-bold or font-black, tight tracking (tracking-tight). No Inter.",
+      "body": "Use IBM Plex Sans for maximum legibility of data fields.",
+      "labels": "Uppercase, text-xs, tracking-[0.2em], font-medium."
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl",
+      "h2": "text-2xl sm:text-3xl",
+      "h3": "text-xl",
+      "body": "text-base",
+      "small": "text-sm"
+    }
+  },
+  "color_palette": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F3F4F6",
+      "camera_overlay": "rgba(0,0,0,0.85)"
+    },
+    "text": {
+      "primary": "#0A0A0A",
+      "secondary": "#4B5563"
+    },
+    "accents": {
+      "primary": "#002FA7",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444"
+    },
+    "rules": {
+      "contrast": "Minimum 4.5:1 for normal text.",
+      "monochrome_dominance": "95% of the UI should be grayscale. Use accents only for state (e.g., sync status, confidence scores, primary camera capture button)."
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Mobile-first, dense Control Room grid for verification, generous Tetris grid for camera and onboarding.",
+    "container_padding": "p-4 or p-6 on mobile, p-8 on larger screens.",
+    "border_radius": "Sharp or minimal (rounded-none or rounded-sm). Maximum 4px radius to maintain the Swiss Brutalist functional feel.",
+    "components": {
+      "dashboard_cards": "Flat background (bg-gray-50), 1px solid border (border-gray-200), no shadows.",
+      "inputs": "Use bottom borders only (border-b-2 border-gray-300) or solid light grey blocks with zero border. No rounded input fields.",
+      "buttons": "Sharp corners (rounded-none), high contrast (bg-black text-white or bg-[#002FA7] text-white). Hover states must lighten slightly."
+    }
+  },
+  "motion_and_interaction": {
+    "hover_states": "Hard background color changes, no soft fades. e.g., hover:bg-gray-900.",
+    "focus_states": "focus:ring-2 focus:ring-[#002FA7] focus:outline-none.",
+    "camera_scanner": "Use a sweeping tracing beam (Aceternity style) along the ID card frame overlay to indicate active scanning.",
+    "loading": "Use monospace ASCII-style loaders or sharp geometric spinners."
+  },
+  "icons_and_assets": {
+    "icon_library": "lucide-react (sharp, functional)",
+    "image_urls": [
+      {
+        "category": "employee_avatar_1",
+        "url": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODA1ODUzNzJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Professional female avatar for employee list"
+      },
+      {
+        "category": "employee_avatar_2",
+        "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODA1ODUzNzJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Professional male avatar for employee list"
+      },
+      {
+        "category": "dashboard_background_abstract",
+        "url": "https://images.unsplash.com/photo-1707077865701-2854996afc4f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBidWlsZGluZyUyMGFic3RyYWN0fGVufDB8fHx8MTc4MDU5MzcwMXww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract office building architecture for empty state or header background"
+      }
+    ]
+  },
+  "component_instructions": {
+    "verification_form": "For OCR results, display a confidence score next to each input. Use a green/yellow/red dot or tiny tag (e.g., [98%] or [LOW]). Use Shadcn Input but strip out the rounded corners.",
+    "camera_screen": "Fullscreen view. Overlay must be bg-black/80 with a clear unmasked rectangle in the center for the ID card. Provide 'Front' and 'Back' step indicators.",
+    "sync_status": "Use small monospace badges to show local SQLite state vs synced MongoDB state. Example: [ SYNCED ] in green text on light green bg, [ PENDING ] in yellow.",
+    "testing": "All interactive elements MUST include data-testid. Example: data-testid='scan-button', data-testid='employee-list-item'."
+  },
+  "general_instructions_for_main_agent": [
+    "Design for a mobile-first web app experience.",
+    "Do not use HTML based components for complex interactions. Rely on customized Shadcn primitives.",
+    "Ensure the camera layout looks native-like: strict bounds, camera frame guides, tight integration of action buttons at the bottom.",
+    "Strictly adhere to the selected fonts, sizes, and tracking. Avoid Inter completely."
+  ]
+}
